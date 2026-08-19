@@ -46,20 +46,91 @@ public class NotificationLog {
     @Column(name = "created_at", updatable = false, nullable = false)
     private Instant createdAt;
 
+    /**
+     * Returns id.
+     * @return the uuid
+     */
     public UUID getId() { return id; }
+    /**
+     * Returns store id.
+     * @return the string
+     */
     public String getStoreId() { return storeId; }
+    /**
+     * Sets store id.
+     *
+     * @param storeId store (tenant) identifier
+     */
     public void setStoreId(String storeId) { this.storeId = storeId; }
+    /**
+     * Returns channel.
+     * @return the notif channel
+     */
     public NotifChannel getChannel() { return channel; }
+    /**
+     * Sets channel.
+     *
+     * @param channel channel
+     */
     public void setChannel(NotifChannel channel) { this.channel = channel; }
+    /**
+     * Returns event.
+     * @return the string
+     */
     public String getEvent() { return event; }
+    /**
+     * Sets event.
+     *
+     * @param event event
+     */
     public void setEvent(String event) { this.event = event; }
+    /**
+     * Returns recipient.
+     * @return the string
+     */
     public String getRecipient() { return recipient; }
+    /**
+     * Sets recipient.
+     *
+     * @param recipient recipient
+     */
     public void setRecipient(String recipient) { this.recipient = recipient; }
+    /**
+     * Returns status.
+     * @return the notif status
+     */
     public NotifStatus getStatus() { return status; }
+    /**
+     * Sets status.
+     *
+     * @param status status
+     */
     public void setStatus(NotifStatus status) { this.status = status; }
+    /**
+     * Returns error.
+     * @return the string
+     */
     public String getError() { return error; }
+    /**
+     * Sets error.
+     *
+     * @param error error
+     */
     public void setError(String error) { this.error = error; }
+    /**
+     * Returns sent at.
+     * @return the instant
+     */
     public Instant getSentAt() { return sentAt; }
+    /**
+     * Sets sent at.
+     *
+     * @param sentAt sent at
+     */
     public void setSentAt(Instant sentAt) { this.sentAt = sentAt; }
+    /**
+     * Returns created at.
+     * @return the instant
+     */
     public Instant getCreatedAt() { return createdAt; }
 }

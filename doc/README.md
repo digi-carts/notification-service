@@ -73,3 +73,7 @@ mvn spring-boot:run
 - [platform-ui](https://github.com/digi-carts/platform-ui/blob/stage/doc/README.md) notifications admin
 - [merchant-ui](https://github.com/digi-carts/merchant-ui/blob/stage/doc/README.md) store alerts
 - [order-service](https://github.com/digi-carts/order-service/blob/stage/doc/README.md)
+
+## REST API reference
+
+See [api.md](api.md) for every HTTP endpoint generated from Spring controllers.

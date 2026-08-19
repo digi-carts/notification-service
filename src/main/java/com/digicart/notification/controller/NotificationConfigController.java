@@ -15,10 +15,22 @@ public class NotificationConfigController {
 
     private final NotificationConfigService service;
 
+    /**
+     * Creates a new {@code NotificationConfigController}.
+     *
+     * @param service service
+     */
     public NotificationConfigController(NotificationConfigService service) {
         this.service = service;
     }
 
+    /**
+     * Handles GET.
+     *
+     * @param userId caller user id from the gateway ({@code X-User-Id})
+     * @param userRole caller role from the gateway ({@code X-User-Role})
+     * @return HTTP response
+     */
     @GetMapping
     public ResponseEntity<NotificationConfig> get(
             @RequestHeader("X-User-Id") String userId,
@@ -26,6 +38,14 @@ public class NotificationConfigController {
         return ResponseEntity.ok(service.get());
     }
 
+    /**
+     * Handles PUT.
+     *
+     * @param userId caller user id from the gateway ({@code X-User-Id})
+     * @param userRole caller role from the gateway ({@code X-User-Role})
+     * @param req request payload
+     * @return HTTP response
+     */
     @PutMapping
     public ResponseEntity<NotificationConfig> upsert(
             @RequestHeader("X-User-Id") String userId,

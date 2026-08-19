@@ -15,15 +15,30 @@ public class NotificationConfigService {
 
     private final NotificationConfigRepository repository;
 
+    /**
+     * Creates a new {@code NotificationConfigService}.
+     *
+     * @param repository repository
+     */
     public NotificationConfigService(NotificationConfigRepository repository) {
         this.repository = repository;
     }
 
+    /**
+     * Get.
+     * @return the notification config
+     */
     public NotificationConfig get() {
         return repository.findById("global")
             .orElseThrow(() -> new NoSuchElementException("Notification config not found"));
     }
 
+    /**
+     * Upsert.
+     *
+     * @param req request payload
+     * @return the notification config
+     */
     public NotificationConfig upsert(NotificationConfigRequest req) {
         NotificationConfig config = repository.findById("global")
             .orElseGet(() -> { NotificationConfig c = new NotificationConfig(); c.setId("global"); return c; });
