@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
 
+/**
+ * Application service implementing notification config use cases for <em>notification-service</em>.
+ */
 @Service
 public class NotificationConfigService {
 
