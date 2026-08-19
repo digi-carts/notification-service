@@ -14,7 +14,26 @@ import java.util.UUID;
  */
 @Repository
 public interface NotificationLogRepository extends JpaRepository<NotificationLog, UUID> {
+    /**
+     * Finds by store id.
+     *
+     * @param storeId store (tenant) identifier
+     * @return matching records
+     */
     List<NotificationLog> findByStoreId(String storeId);
+    /**
+     * Finds by status.
+     *
+     * @param status status
+     * @return matching records
+     */
     List<NotificationLog> findByStatus(NotifStatus status);
+    /**
+     * Finds by store id and channel.
+     *
+     * @param storeId store (tenant) identifier
+     * @param channel channel
+     * @return matching records
+     */
     List<NotificationLog> findByStoreIdAndChannel(String storeId, NotifChannel channel);
 }
