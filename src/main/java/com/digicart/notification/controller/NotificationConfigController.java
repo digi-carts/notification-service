@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * REST controller exposing notification config HTTP APIs for <em>notification-service</em>.
  */
 @RestController
-@RequestMapping("/api/notification-config")
+@RequestMapping("/api/notifications/config")
 public class NotificationConfigController {
 
     private final NotificationConfigService service;

@@ -17,7 +17,7 @@ import java.util.UUID;
  * REST controller exposing notification log HTTP APIs for <em>notification-service</em>.
  */
 @RestController
-@RequestMapping("/api/notification-logs")
+@RequestMapping("/api/notifications/logs")
 public class NotificationLogController {
 
     private final NotificationLogService service;
