@@ -2,6 +2,9 @@ package com.digicart.notification.dto;
 
 import com.digicart.notification.entity.WaProvider;
 
+/**
+ * Request/response DTO: Notification Config Request.
+ */
 public class NotificationConfigRequest {
     private String smtpHost;
     private Integer smtpPort;

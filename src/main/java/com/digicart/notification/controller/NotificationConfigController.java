@@ -6,6 +6,9 @@ import com.digicart.notification.service.NotificationConfigService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * REST controller exposing notification config HTTP APIs for <em>notification-service</em>.
+ */
 @RestController
 @RequestMapping("/api/notification-config")
 public class NotificationConfigController {

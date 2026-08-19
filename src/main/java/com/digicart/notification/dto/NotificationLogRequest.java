@@ -4,6 +4,9 @@ import com.digicart.notification.entity.NotifChannel;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+/**
+ * Request/response DTO: Notification Log Request.
+ */
 public class NotificationLogRequest {
 
     private String storeId;

@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Spring Data JPA repository for notification log  persistence.
+ */
 @Repository
 public interface NotificationLogRepository extends JpaRepository<NotificationLog, UUID> {
     List<NotificationLog> findByStoreId(String storeId);
