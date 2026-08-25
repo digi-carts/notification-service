@@ -5,7 +5,6 @@ import com.digicart.notification.entity.NotificationConfig;
 import com.digicart.notification.repository.NotificationConfigRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.NoSuchElementException;
 
 /**
  * Application service implementing notification config use cases for <em>notification-service</em>.
@@ -21,7 +20,7 @@ public class NotificationConfigService {
 
     public NotificationConfig get() {
         return repository.findById("global")
-            .orElseThrow(() -> new NoSuchElementException("Notification config not found"));
+            .orElseGet(() -> { NotificationConfig c = new NotificationConfig(); c.setId("global"); return c; });
     }
 
     public NotificationConfig upsert(NotificationConfigRequest req) {
