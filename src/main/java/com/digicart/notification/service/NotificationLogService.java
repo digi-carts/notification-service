@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
+/**
+ * Application service implementing notification log use cases for <em>notification-service</em>.
+ */
 @Service
 public class NotificationLogService {
 

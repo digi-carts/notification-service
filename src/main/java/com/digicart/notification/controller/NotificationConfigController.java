@@ -6,8 +6,13 @@ import com.digicart.notification.service.NotificationConfigService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
+/**
+ * REST controller exposing notification config HTTP APIs for <em>notification-service</em>.
+ */
 @RestController
-@RequestMapping("/api/notification-config")
+@RequestMapping("/api/notifications/config")
 public class NotificationConfigController {
 
     private final NotificationConfigService service;
@@ -17,9 +22,12 @@ public class NotificationConfigController {
     }
 
     @GetMapping
-    public ResponseEntity<NotificationConfig> get(
-            @RequestHeader("X-User-Id") String userId,
-            @RequestHeader("X-User-Role") String userRole) {
+    public ResponseEntity<?> get(
+            @RequestHeader(value = "X-User-Id", required = false) String userId,
+            @RequestHeader(value = "X-User-Role", required = false) String userRole) {
+        if ("user".equalsIgnoreCase(userRole)) {
+            return ResponseEntity.status(403).body(Map.of("error", "Forbidden"));
+        }
         return ResponseEntity.ok(service.get());
     }
 

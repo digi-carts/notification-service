@@ -6,6 +6,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.Instant;
 
+/**
+ * JPA entity mapped in this service schema (Notification Config).
+ */
 @Entity
 @Table(name = "notification_config", schema = "notif_svc")
 @EntityListeners(AuditingEntityListener.class)
